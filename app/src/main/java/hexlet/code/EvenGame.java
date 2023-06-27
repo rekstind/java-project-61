@@ -1,12 +1,11 @@
 package hexlet.code;
 
-import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class EvenGame {
 
-    public static void startGame(Scanner scanner) throws IOException {
+    public static void startGame(Scanner scanner) {
         String userName = Cli.greetings();
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
@@ -38,6 +37,7 @@ public class EvenGame {
         }
 
         System.out.println("Congratulations, " + userName + "!");
+        System.out.println();
 
     }
 }

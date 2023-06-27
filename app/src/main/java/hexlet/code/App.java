@@ -1,10 +1,9 @@
 package hexlet.code;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -13,9 +12,8 @@ public class App {
             System.out.println("2 - Even");
             System.out.println("0 - Exit");
 
+            System.out.print("Your choice: ");
             String s = scanner.next();
-
-            System.out.println("Your choice: " + s);
 
             if (s.equals("0")) {
                 break;
