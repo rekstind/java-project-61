@@ -3,27 +3,24 @@ package hexlet.code.game;
 import hexlet.code.Engine;
 
 import java.math.BigInteger;
+import java.util.Random;
 import java.util.Scanner;
 
-public class Gcd extends Games implements Game {
+public class Gcd {
 
-    public Gcd(String userName) {
-        super(userName);
-    }
-
-    @Override
-    public void startGame(Scanner scanner) {
+    public static void startGame(Scanner scanner) {
         System.out.println("Find the greatest common divisor of given numbers.");
 
-        Engine.runEngine(scanner, this);
+        Engine.runEngine(scanner, Gcd.class.getSimpleName());
     }
 
-    @Override
-    public String[] getQnA() {
+    public static String[] getQnA() {
+        Random random = new Random();
         String[] result = new String[2];
 
-        BigInteger a = new BigInteger(7, random);
-        BigInteger b = new BigInteger(7, random);
+        int maxBits = 7;
+        BigInteger a = new BigInteger(maxBits, random);
+        BigInteger b = new BigInteger(maxBits, random);
 
         BigInteger max = a.gcd(b);
 

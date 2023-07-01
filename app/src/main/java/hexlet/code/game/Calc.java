@@ -2,39 +2,42 @@ package hexlet.code.game;
 
 import hexlet.code.Engine;
 
+import java.util.Random;
 import java.util.Scanner;
 
-public class Calc extends Games implements Game {
+public class Calc {
 
-    public Calc(String userName) {
-        super(userName);
-    }
-
-    @Override
-    public void startGame(Scanner scanner) {
+    public static void startGame(Scanner scanner) {
         System.out.println("What is the result of the expression?");
 
-        Engine.runEngine(scanner, this);
+        Engine.runEngine(scanner, Calc.class.getSimpleName());
     }
 
-    @Override
-    public String[] getQnA() {
+    public static String[] getQnA() {
+        Random random = new Random();
+
         String[] result = new String[2];
 
-        int a = random.nextInt(100);
-        int b = random.nextInt(100);
-        int c = random.nextInt(100) % 3;
+        int limit = 100;
+        int countOperation = 3;
+        String operation;
+
+        int a = random.nextInt(limit);
+        int b = random.nextInt(limit);
+        int c = random.nextInt(countOperation);
 
         if (c == 0) {
-            result[0] = a + " + " + b;
+            operation = " + ";
             result[1] = String.valueOf(a + b);
         } else if (c == 1) {
-            result[0] = a + " - " + b;
+            operation = " - ";
             result[1] = String.valueOf(a - b);
         } else {
-            result[0] = a + " * " + b;
+            operation = " * ";
             result[1] = String.valueOf(a * b);
         }
+
+        result[0] = a + operation + b;
 
         return result;
     }

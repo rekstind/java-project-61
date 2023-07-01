@@ -5,15 +5,12 @@ import hexlet.code.game.Calc;
 import hexlet.code.game.Gcd;
 import hexlet.code.game.Progression;
 import hexlet.code.game.Prime;
-import hexlet.code.game.Game;
 
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Game game;
-        String userName = null;
 
         while (true) {
             System.out.println("Please enter the game number and press Enter.");
@@ -32,33 +29,27 @@ public class App {
                 break;
             }
 
-            if (s.equals("1") || userName == null) {
-                userName = Cli.greetings();
-            }
+            Cli.greetings();
 
             switch (s) {
                 case "2":
-                    game = new Even(userName);
+                    Even.startGame(scanner);
                     break;
                 case "3":
-                    game = new Calc(userName);
+                    Calc.startGame(scanner);
                     break;
                 case "4":
-                    game = new Gcd(userName);
+                    Gcd.startGame(scanner);
                     break;
                 case "5":
-                    game = new Progression(userName);
+                    Progression.startGame(scanner);
                     break;
                 case "6":
-                    game = new Prime(userName);
+                    Prime.startGame(scanner);
                     break;
                 default:
-                    game = null;
             }
 
-            if (game != null) {
-                game.startGame(scanner);
-            }
         }
 
         scanner.close();

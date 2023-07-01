@@ -2,33 +2,34 @@ package hexlet.code.game;
 
 import hexlet.code.Engine;
 
+import java.util.Random;
 import java.util.Scanner;
 
-public class Progression extends Games implements Game {
+public class Progression {
 
-    public Progression(String userName) {
-        super(userName);
-    }
-
-    @Override
-    public void startGame(Scanner scanner) {
+    public static void startGame(Scanner scanner) {
         System.out.println("What is the result of the expression?");
 
-        Engine.runEngine(scanner, this);
+        Engine.runEngine(scanner, Progression.class.getSimpleName());
     }
 
-    @Override
-    public String[] getQnA() {
+    public static String[] getQnA() {
+        Random random = new Random();
+
         String[] result = new String[2];
         result[0] = "";
 
-        int limit = random.nextInt(10);
-        while (limit < 5) {
-            limit = random.nextInt(10);
+        int minSize = 5;
+        int maxSize = 10;
+        int maxStep = 20;
+
+        int limit = random.nextInt(maxSize);
+        while (limit < minSize) {
+            limit = random.nextInt(maxSize);
         }
 
-        int multiple = random.nextInt(10);
-        int hide = random.nextInt(limit - 1);
+        int multiple = random.nextInt(maxStep);
+        int hide = random.nextInt(limit);
         int element = 0;
 
         for (int i = 0; i < limit; i++) {

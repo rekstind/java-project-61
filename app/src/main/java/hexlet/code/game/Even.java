@@ -2,30 +2,27 @@ package hexlet.code.game;
 
 import hexlet.code.Engine;
 
+import java.util.Random;
 import java.util.Scanner;
 
-public class Even extends Games implements Game {
+public class Even {
 
-    public Even(String userName) {
-        super(userName);
-    }
-
-    @Override
-    public void startGame(Scanner scanner) {
+    public static void startGame(Scanner scanner) {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        Engine.runEngine(scanner, this);
+        Engine.runEngine(scanner, Even.class.getSimpleName());
     }
 
-    @Override
-    public String[] getQnA() {
+    public static String[] getQnA() {
+        Random random = new Random();
         String[] result = new String[2];
 
-        int randomInt = random.nextInt(100);
+        int randomInt = random.nextInt(1000);
         boolean isEven = randomInt % 2 == 0;
         result[0] = String.valueOf(randomInt);
         result[1] = isEven ? "yes" : "no";
 
         return result;
+
     }
 }
