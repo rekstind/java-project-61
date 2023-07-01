@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class Prime {
 
+    private static final int LIMIT = 1000;
+
     public static void startGame(Scanner scanner) {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
@@ -18,8 +20,7 @@ public class Prime {
 
         String[] result = new String[2];
 
-        int limit = 1000;
-        int i = random.nextInt(limit);
+        int i = random.nextInt(LIMIT);
 
         result[0] = String.valueOf(i);
         result[1] = isPrime(i) ? "yes" : "no";

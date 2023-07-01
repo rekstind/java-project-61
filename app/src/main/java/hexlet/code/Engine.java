@@ -10,12 +10,14 @@ import java.util.Scanner;
 
 public class Engine {
 
+    private static final int QUESTION_COUNT = 3;
+
     public static void runEngine(Scanner scanner, String gameNumber) {
 
         String[] questionAndAnswer;
         String answer;
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < QUESTION_COUNT; i++) {
 
             questionAndAnswer = getQnA(gameNumber);
 

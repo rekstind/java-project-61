@@ -7,6 +7,11 @@ import java.util.Scanner;
 
 public class Progression {
 
+    private static final int MIN_SIZE = 5;
+    private static final int MAX_SIZE = 10;
+    private static final int MAX_STEP = 20;
+
+
     public static void startGame(Scanner scanner) {
         System.out.println("What number is missing in the progression?");
 
@@ -19,16 +24,12 @@ public class Progression {
         String[] result = new String[2];
         result[0] = "";
 
-        int minSize = 5;
-        int maxSize = 10;
-        int maxStep = 20;
-
-        int limit = random.nextInt(maxSize);
-        while (limit < minSize) {
-            limit = random.nextInt(maxSize);
+        int limit = random.nextInt(MAX_SIZE);
+        while (limit < MIN_SIZE) {
+            limit = random.nextInt(MAX_SIZE);
         }
 
-        int multiple = random.nextInt(maxStep);
+        int multiple = random.nextInt(MAX_STEP);
         int hide = random.nextInt(limit);
         int element = 0;
 

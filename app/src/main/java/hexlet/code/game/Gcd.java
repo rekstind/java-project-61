@@ -7,6 +7,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Gcd {
+    private static final int MAX_BITS = 3;
 
     public static void startGame(Scanner scanner) {
         System.out.println("Find the greatest common divisor of given numbers.");
@@ -18,9 +19,8 @@ public class Gcd {
         Random random = new Random();
         String[] result = new String[2];
 
-        int maxBits = 7;
-        BigInteger a = new BigInteger(maxBits, random);
-        BigInteger b = new BigInteger(maxBits, random);
+        BigInteger a = new BigInteger(MAX_BITS, random);
+        BigInteger b = new BigInteger(MAX_BITS, random);
 
         BigInteger max = a.gcd(b);
 

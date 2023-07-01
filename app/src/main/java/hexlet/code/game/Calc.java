@@ -7,6 +7,9 @@ import java.util.Scanner;
 
 public class Calc {
 
+    private static final int LIMIT = 3;
+    private static final int COUNT_OPERATION = 3;
+
     public static void startGame(Scanner scanner) {
         System.out.println("What is the result of the expression?");
 
@@ -18,13 +21,11 @@ public class Calc {
 
         String[] result = new String[2];
 
-        int limit = 100;
-        int countOperation = 3;
         String operation;
 
-        int a = random.nextInt(limit);
-        int b = random.nextInt(limit);
-        int c = random.nextInt(countOperation);
+        int a = random.nextInt(LIMIT);
+        int b = random.nextInt(LIMIT);
+        int c = random.nextInt(COUNT_OPERATION);
 
         if (c == 0) {
             operation = " + ";
