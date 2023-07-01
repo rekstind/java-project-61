@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Progression {
 
     public static void startGame(Scanner scanner) {
-        System.out.println("What is the result of the expression?");
+        System.out.println("What number is missing in the progression?");
 
         Engine.runEngine(scanner, getGameNumber());
     }
