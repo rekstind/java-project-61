@@ -39,18 +39,22 @@ public class Engine {
     }
 
     static String[] getQnA(String gameType) {
+        String[] result;
+
         if (gameType.equals(Even.class.getSimpleName())) {
-            return Even.getQnA();
+            result = Even.getQnA();
         } else if (gameType.equals(Calc.class.getSimpleName())) {
-            return Calc.getQnA();
+            result = Calc.getQnA();
         } else if (gameType.equals(Gcd.class.getSimpleName())) {
-            return Gcd.getQnA();
+            result = Gcd.getQnA();
         } else if (gameType.equals(Progression.class.getSimpleName())) {
-            return Progression.getQnA();
+            result = Progression.getQnA();
         } else if (gameType.equals(Prime.class.getSimpleName())) {
-            return Prime.getQnA();
+            result = Prime.getQnA();
+        } else {
+            result = new String[2];
         }
 
-        return new String[2];
+        return result;
     }
 }
