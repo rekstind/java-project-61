@@ -6,7 +6,7 @@ public interface Game {
 
     void startGame(Scanner scanner);
 
-    String[] getQuestionCorrectAnswer();
+    String[] getQnA();
 
     String getUserName();
 }

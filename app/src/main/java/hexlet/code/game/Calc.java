@@ -23,7 +23,7 @@ public class Calc implements Game {
     }
 
     @Override
-    public String[] getQuestionCorrectAnswer() {
+    public String[] getQnA() {
         String[] result = new String[2];
 
         int a = random.nextInt(100);

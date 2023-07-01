@@ -13,7 +13,7 @@ public class Engine {
 
         for (int i = 0; i < 3; i++) {
 
-            qestionAndAnswer = game.getQuestionCorrectAnswer();
+            qestionAndAnswer = game.getQnA();
 
             System.out.println("Question: " + qestionAndAnswer[0]);
             System.out.print("Your answer: ");

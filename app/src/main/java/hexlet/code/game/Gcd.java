@@ -2,22 +2,22 @@ package hexlet.code.game;
 
 import hexlet.code.Engine;
 
+import java.math.BigInteger;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Even implements Game {
-
+public class Gcd implements Game {
     String userName;
     Random random;
 
-    public Even(String userName) {
+    public Gcd(String userName) {
         this.userName = userName;
         random = new Random();
     }
 
     @Override
     public void startGame(Scanner scanner) {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        System.out.println("Find the greatest common divisor of given numbers.");
 
         Engine.runEngine(scanner, this);
     }
@@ -26,10 +26,13 @@ public class Even implements Game {
     public String[] getQnA() {
         String[] result = new String[2];
 
-        int randomInt = random.nextInt(100);
-        boolean isEven = randomInt % 2 == 0;
-        result[0] = String.valueOf(randomInt);
-        result[1] = isEven ? "yes" : "no";
+        BigInteger a = new BigInteger(7, random);
+        BigInteger b = new BigInteger(7, random);
+
+        BigInteger max = a.gcd(b);
+
+        result[0] = a + " " + b;
+        result[1] = max.toString();
 
         return result;
     }
