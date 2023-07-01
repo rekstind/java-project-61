@@ -10,7 +10,7 @@ public class Progression {
     public static void startGame(Scanner scanner) {
         System.out.println("What is the result of the expression?");
 
-        Engine.runEngine(scanner, Progression.class.getSimpleName());
+        Engine.runEngine(scanner, getGameNumber());
     }
 
     public static String[] getQnA() {
@@ -42,5 +42,9 @@ public class Progression {
         }
 
         return result;
+    }
+
+    public static String getGameNumber() {
+        return "5";
     }
 }

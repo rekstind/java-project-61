@@ -10,7 +10,7 @@ public class Even {
     public static void startGame(Scanner scanner) {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        Engine.runEngine(scanner, Even.class.getSimpleName());
+        Engine.runEngine(scanner, getGameNumber());
     }
 
     public static String[] getQnA() {
@@ -24,5 +24,9 @@ public class Even {
 
         return result;
 
+    }
+
+    public static String getGameNumber() {
+        return "2";
     }
 }

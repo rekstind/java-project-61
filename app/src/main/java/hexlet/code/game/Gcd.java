@@ -11,7 +11,7 @@ public class Gcd {
     public static void startGame(Scanner scanner) {
         System.out.println("Find the greatest common divisor of given numbers.");
 
-        Engine.runEngine(scanner, Gcd.class.getSimpleName());
+        Engine.runEngine(scanner, getGameNumber());
     }
 
     public static String[] getQnA() {
@@ -28,5 +28,9 @@ public class Gcd {
         result[1] = max.toString();
 
         return result;
+    }
+
+    public static String getGameNumber() {
+        return "4";
     }
 }

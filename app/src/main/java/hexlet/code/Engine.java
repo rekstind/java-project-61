@@ -10,14 +10,14 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static void runEngine(Scanner scanner, String gameType) {
+    public static void runEngine(Scanner scanner, String gameNumber) {
 
         String[] questionAndAnswer;
         String answer;
 
         for (int i = 0; i < 3; i++) {
 
-            questionAndAnswer = getQnA(gameType);
+            questionAndAnswer = getQnA(gameNumber);
 
             System.out.println("Question: " + questionAndAnswer[0]);
             System.out.print("Your answer: ");
@@ -38,18 +38,18 @@ public class Engine {
         System.out.println("Congratulations, " + Cli.getUserName() + "!");
     }
 
-    static String[] getQnA(String gameType) {
+    static String[] getQnA(String gameNumber) {
         String[] result;
 
-        if (gameType.equals(Even.class.getSimpleName())) {
+        if (gameNumber.equals(Even.getGameNumber())) {
             result = Even.getQnA();
-        } else if (gameType.equals(Calc.class.getSimpleName())) {
+        } else if (gameNumber.equals(Calc.getGameNumber())) {
             result = Calc.getQnA();
-        } else if (gameType.equals(Gcd.class.getSimpleName())) {
+        } else if (gameNumber.equals(Gcd.getGameNumber())) {
             result = Gcd.getQnA();
-        } else if (gameType.equals(Progression.class.getSimpleName())) {
+        } else if (gameNumber.equals(Progression.getGameNumber())) {
             result = Progression.getQnA();
-        } else if (gameType.equals(Prime.class.getSimpleName())) {
+        } else if (gameNumber.equals(Prime.getGameNumber())) {
             result = Prime.getQnA();
         } else {
             result = new String[2];

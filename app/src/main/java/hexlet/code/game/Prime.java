@@ -10,7 +10,7 @@ public class Prime {
     public static void startGame(Scanner scanner) {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-        Engine.runEngine(scanner, Prime.class.getSimpleName());
+        Engine.runEngine(scanner, getGameNumber());
     }
 
     public static String[] getQnA() {
@@ -41,5 +41,9 @@ public class Prime {
         }
 
         return true;
+    }
+
+    public static String getGameNumber() {
+        return "6";
     }
 }

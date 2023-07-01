@@ -10,7 +10,7 @@ public class Calc {
     public static void startGame(Scanner scanner) {
         System.out.println("What is the result of the expression?");
 
-        Engine.runEngine(scanner, Calc.class.getSimpleName());
+        Engine.runEngine(scanner, getGameNumber());
     }
 
     public static String[] getQnA() {
@@ -40,5 +40,9 @@ public class Calc {
         result[0] = a + operation + b;
 
         return result;
+    }
+
+    public static String getGameNumber() {
+        return "3";
     }
 }
