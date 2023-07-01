@@ -1,16 +1,17 @@
 package hexlet.code;
 
-import hexlet.code.game.Calc;
-import hexlet.code.game.Even;
 import hexlet.code.game.Game;
+import hexlet.code.game.Even;
+import hexlet.code.game.Calc;
 import hexlet.code.game.Gcd;
+import hexlet.code.game.Progression;
 
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Game game = null;
+        Game game;
         String userName = null;
 
         while (true) {
@@ -19,6 +20,7 @@ public class App {
             System.out.println("2 - Even");
             System.out.println("3 - Calc");
             System.out.println("4 - GCD");
+            System.out.println("5 - Progression");
             System.out.println("0 - Exit");
 
             System.out.print("Your choice: ");
@@ -33,9 +35,20 @@ public class App {
             }
 
             switch (s) {
-                case "2" -> game = new Even(userName);
-                case "3" -> game = new Calc(userName);
-                case "4" -> game = new Gcd(userName);
+                case "2":
+                    game = new Even(userName);
+                    break;
+                case "3":
+                    game = new Calc(userName);
+                    break;
+                case "4":
+                    game = new Gcd(userName);
+                    break;
+                case "5":
+                    game = new Progression(userName);
+                    break;
+                default:
+                    game = null;
             }
 
             if (game != null) {
