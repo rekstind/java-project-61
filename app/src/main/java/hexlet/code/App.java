@@ -12,28 +12,25 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            printGameMenu();
+        printGameMenu();
 
-            System.out.print("Your choice: ");
-            String s = scanner.next();
+        System.out.print("Your choice: ");
+        String s = scanner.next();
 
-            if (s.equals("0")) {
-                break;
+        if (s.equals("0")) {
+            return;
+        }
+
+        Cli.greetings();
+
+        switch (s) {
+            case "2" -> Even.startGame(scanner);
+            case "3" -> Calc.startGame(scanner);
+            case "4" -> Gcd.startGame(scanner);
+            case "5" -> Progression.startGame(scanner);
+            case "6" -> Prime.startGame(scanner);
+            default -> {
             }
-
-            Cli.greetings();
-
-            switch (s) {
-                case "2" -> Even.startGame(scanner);
-                case "3" -> Calc.startGame(scanner);
-                case "4" -> Gcd.startGame(scanner);
-                case "5" -> Progression.startGame(scanner);
-                case "6" -> Prime.startGame(scanner);
-                default -> {
-                }
-            }
-
         }
 
         scanner.close();
