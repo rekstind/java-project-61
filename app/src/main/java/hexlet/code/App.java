@@ -13,14 +13,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Please enter the game number and press Enter.");
-            System.out.println("1 - Greet");
-            System.out.println("2 - Even");
-            System.out.println("3 - Calc");
-            System.out.println("4 - GCD");
-            System.out.println("5 - Progression");
-            System.out.println("6 - Prime");
-            System.out.println("0 - Exit");
+            printGameMenu();
 
             System.out.print("Your choice: ");
             String s = scanner.next();
@@ -32,26 +25,29 @@ public class App {
             Cli.greetings();
 
             switch (s) {
-                case "2":
-                    Even.startGame(scanner);
-                    break;
-                case "3":
-                    Calc.startGame(scanner);
-                    break;
-                case "4":
-                    Gcd.startGame(scanner);
-                    break;
-                case "5":
-                    Progression.startGame(scanner);
-                    break;
-                case "6":
-                    Prime.startGame(scanner);
-                    break;
-                default:
+                case "2" -> Even.startGame(scanner);
+                case "3" -> Calc.startGame(scanner);
+                case "4" -> Gcd.startGame(scanner);
+                case "5" -> Progression.startGame(scanner);
+                case "6" -> Prime.startGame(scanner);
+                default -> {
+                }
             }
 
         }
 
         scanner.close();
+    }
+
+    static void printGameMenu () {
+        System.out.println("Please enter the game number and press Enter.");
+        System.out.println("1 - Greet");
+        System.out.println("2 - Even");
+        System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
+        System.out.println("0 - Exit");
+
     }
 }
