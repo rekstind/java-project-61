@@ -2,17 +2,12 @@ package hexlet.code.game;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
 import java.util.Scanner;
 
-public class Even implements Game {
-
-    String userName;
-    Random random;
+public class Even extends Games implements Game {
 
     public Even(String userName) {
-        this.userName = userName;
-        random = new Random();
+        super(userName);
     }
 
     @Override
@@ -32,10 +27,5 @@ public class Even implements Game {
         result[1] = isEven ? "yes" : "no";
 
         return result;
-    }
-
-    @Override
-    public String getUserName() {
-        return userName;
     }
 }

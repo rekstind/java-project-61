@@ -2,17 +2,12 @@ package hexlet.code.game;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
 import java.util.Scanner;
 
-public class Calc implements Game {
-
-    String userName;
-    Random random;
+public class Calc extends Games implements Game {
 
     public Calc(String userName) {
-        this.userName = userName;
-        random = new Random();
+        super(userName);
     }
 
     @Override
@@ -43,10 +38,4 @@ public class Calc implements Game {
 
         return result;
     }
-
-    @Override
-    public String getUserName() {
-        return userName;
-    }
-
 }

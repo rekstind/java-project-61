@@ -1,16 +1,13 @@
 package hexlet.code.game;
 
 import hexlet.code.Engine;
-import java.util.Random;
+
 import java.util.Scanner;
 
-public class Progression implements Game {
-    String userName;
-    Random random;
+public class Progression extends Games implements Game {
 
     public Progression(String userName) {
-        this.userName = userName;
-        random = new Random();
+        super(userName);
     }
 
     @Override
@@ -44,10 +41,5 @@ public class Progression implements Game {
         }
 
         return result;
-    }
-
-    @Override
-    public String getUserName() {
-        return userName;
     }
 }

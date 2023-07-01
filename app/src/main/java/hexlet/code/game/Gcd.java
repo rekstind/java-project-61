@@ -3,16 +3,12 @@ package hexlet.code.game;
 import hexlet.code.Engine;
 
 import java.math.BigInteger;
-import java.util.Random;
 import java.util.Scanner;
 
-public class Gcd implements Game {
-    String userName;
-    Random random;
+public class Gcd extends Games implements Game {
 
     public Gcd(String userName) {
-        this.userName = userName;
-        random = new Random();
+        super(userName);
     }
 
     @Override
@@ -35,10 +31,5 @@ public class Gcd implements Game {
         result[1] = max.toString();
 
         return result;
-    }
-
-    @Override
-    public String getUserName() {
-        return userName;
     }
 }
