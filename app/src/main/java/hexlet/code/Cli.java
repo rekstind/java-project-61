@@ -18,7 +18,4 @@ public class Cli {
         return userName;
     }
 
-    public static void setUserName(String userName) {
-        Cli.userName = userName;
-    }
 }
