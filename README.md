@@ -5,3 +5,5 @@
 Coverage](https://api.codeclimate.com/v1/badges/a472ed4df1a0eef2a29f/test_coverage)](https://codeclimate.com/github/rekstind/java-project-61/test_coverage)
 
 https://asciinema.org/a/ILs76iC6dPrqznWpa7dHl8uhV
+
+https://asciinema.org/a/1HURMvhChEmR7q5d9BObQD4p2
