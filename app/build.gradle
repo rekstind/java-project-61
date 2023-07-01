@@ -1,0 +1,40 @@
+plugins {
+//    id 'java'
+    id 'application'
+    id 'checkstyle'
+}
+
+group = 'hexlet.code'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+compileJava {
+    options.release = 17
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClass = 'hexlet.code.App'
+}
+
+run {
+    standardInput = System.in
+}
+
+checkstyle {
+    toolVersion = '10.3.3'
+}
