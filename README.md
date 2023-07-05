@@ -4,12 +4,12 @@
 [![Test 
 Coverage](https://api.codeclimate.com/v1/badges/a472ed4df1a0eef2a29f/test_coverage)](https://codeclimate.com/github/rekstind/java-project-61/test_coverage)
 
-https://asciinema.org/a/ILs76iC6dPrqznWpa7dHl8uhV
+[![asciicast](https://asciinema.org/a/ILs76iC6dPrqznWpa7dHl8uhV.svg)](https://asciinema.org/a/ILs76iC6dPrqznWpa7dHl8uhV)
 
-https://asciinema.org/a/1HURMvhChEmR7q5d9BObQD4p2
+[![asciicast](https://asciinema.org/a/1HURMvhChEmR7q5d9BObQD4p2.svg)](https://asciinema.org/a/1HURMvhChEmR7q5d9BObQD4p2)
 
-https://asciinema.org/a/2fCVKGqbXwNIRMqn7nvFZsuF6
+[![asciicast](https://asciinema.org/a/2fCVKGqbXwNIRMqn7nvFZsuF6.svg)](https://asciinema.org/a/2fCVKGqbXwNIRMqn7nvFZsuF6)
 
-https://asciinema.org/a/cDEfrqIZ6Wa35g3ialnGQmp2I
+[![asciicast](https://asciinema.org/a/cDEfrqIZ6Wa35g3ialnGQmp2I.svg)](https://asciinema.org/a/cDEfrqIZ6Wa35g3ialnGQmp2I)
 
-https://asciinema.org/a/qF4cx4GmLQWpykBunR4YcS9ql
+[![asciicast](https://asciinema.org/a/qF4cx4GmLQWpykBunR4YcS9ql.svg)](https://asciinema.org/a/qF4cx4GmLQWpykBunR4YcS9ql)
