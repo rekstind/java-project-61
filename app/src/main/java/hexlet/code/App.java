@@ -29,8 +29,7 @@ public class App {
             case "4" -> Gcd.startGame(scanner);
             case "5" -> Progression.startGame(scanner);
             case "6" -> Prime.startGame(scanner);
-            default -> {
-            }
+            default -> System.out.println("Game not selected");
         }
 
         scanner.close();

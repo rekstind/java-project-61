@@ -7,43 +7,45 @@ import java.util.Scanner;
 
 public class Calc {
 
-    private static final int LIMIT = 3;
-    private static final int COUNT_OPERATION = 3;
+    private static final int LIMIT = 100;
+    private static final int QUESTIONS_COUNT = 3;
+    private static final int QNA_LENGTH = 2;
+    private static final String[] ACTIONS = {"+", "-", "*"};
 
     public static void startGame(Scanner scanner) {
         System.out.println("What is the result of the expression?");
 
-        Engine.runEngine(scanner, getGameNumber());
+        Engine.runEngine(scanner, getQnA());
     }
 
-    public static String[] getQnA() {
+    public static String[][] getQnA() {
         Random random = new Random();
 
-        String[] result = new String[2];
+        String[][] result = new String[QUESTIONS_COUNT][QNA_LENGTH];
 
-        String operation;
+        int a;
+        int b;
+        String action;
 
-        int a = random.nextInt(LIMIT);
-        int b = random.nextInt(LIMIT);
-        int c = random.nextInt(COUNT_OPERATION);
+        for (int i = 0; i < QUESTIONS_COUNT; i++) {
+            a = random.nextInt(LIMIT);
+            b = random.nextInt(LIMIT);
+            action = ACTIONS[random.nextInt(ACTIONS.length)];
 
-        if (c == 0) {
-            operation = " + ";
-            result[1] = String.valueOf(a + b);
-        } else if (c == 1) {
-            operation = " - ";
-            result[1] = String.valueOf(a - b);
-        } else {
-            operation = " * ";
-            result[1] = String.valueOf(a * b);
+            result[i][0] = a + action + b;
+            result[i][1] = getAnswer(a, b, action);
         }
-
-        result[0] = a + operation + b;
 
         return result;
     }
 
-    public static String getGameNumber() {
-        return "3";
+    private static String getAnswer(int a, int b, String action) {
+        int result = switch (action) {
+            case "+" -> a + b;
+            case "-" -> a - b;
+            default -> a * b;
+        };
+
+        return String.valueOf(result);
     }
 }
