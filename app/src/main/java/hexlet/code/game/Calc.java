@@ -32,7 +32,7 @@ public class Calc {
             b = random.nextInt(LIMIT);
             action = ACTIONS[random.nextInt(ACTIONS.length)];
 
-            result[i][0] = a + action + b;
+            result[i][0] = String.format("%s %s %s", a, action, b);
             result[i][1] = getAnswer(a, b, action);
         }
 
