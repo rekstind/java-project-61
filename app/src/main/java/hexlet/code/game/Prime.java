@@ -8,21 +8,18 @@ import java.util.Scanner;
 public class Prime {
 
     private static final int LIMIT = 1000;
-    private static final int QUESTIONS_COUNT = 3;
-    private static final int QNA_LENGTH = 2;
+    private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void startGame(Scanner scanner) {
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-
-        Engine.runEngine(scanner, getQnA());
+        Engine.runEngine(scanner, generateQuestionsAndAnswers(), DESCRIPTION);
     }
 
-    public static String[][] getQnA() {
+    public static String[][] generateQuestionsAndAnswers() {
         Random random = new Random();
 
-        String[][] result = new String[QUESTIONS_COUNT][QNA_LENGTH];
+        String[][] result = new String[Engine.QUESTIONS_COUNT][Engine.QNA_LENGTH];
 
-        for (int i = 0; i < QUESTIONS_COUNT; i++) {
+        for (int i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             int nextInt = random.nextInt(LIMIT);
 
             result[i][0] = String.valueOf(nextInt);

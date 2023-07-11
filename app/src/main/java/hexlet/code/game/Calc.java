@@ -8,44 +8,37 @@ import java.util.Scanner;
 public class Calc {
 
     private static final int LIMIT = 100;
-    private static final int QUESTIONS_COUNT = 3;
-    private static final int QNA_LENGTH = 2;
     private static final String[] ACTIONS = {"+", "-", "*"};
+    private static final String DESCRIPTION = "What is the result of the expression?";
 
     public static void startGame(Scanner scanner) {
-        System.out.println("What is the result of the expression?");
-
-        Engine.runEngine(scanner, getQnA());
+        Engine.runEngine(scanner, generateQuestionsAndAnswers(), DESCRIPTION);
     }
 
-    public static String[][] getQnA() {
+    public static String[][] generateQuestionsAndAnswers() {
         Random random = new Random();
 
-        String[][] result = new String[QUESTIONS_COUNT][QNA_LENGTH];
+        String[][] result = new String[Engine.QUESTIONS_COUNT][Engine.QNA_LENGTH];
 
-        int a;
-        int b;
-        String action;
-
-        for (int i = 0; i < QUESTIONS_COUNT; i++) {
-            a = random.nextInt(LIMIT);
-            b = random.nextInt(LIMIT);
-            action = ACTIONS[random.nextInt(ACTIONS.length)];
+        for (int i = 0; i < Engine.QUESTIONS_COUNT; i++) {
+            int a = random.nextInt(LIMIT);
+            int b = random.nextInt(LIMIT);
+            String action = ACTIONS[random.nextInt(ACTIONS.length)];
 
             result[i][0] = String.format("%s %s %s", a, action, b);
-            result[i][1] = getAnswer(a, b, action);
+            result[i][1] = String.valueOf(calculate(a, b, action));
         }
 
         return result;
     }
 
-    private static String getAnswer(int a, int b, String action) {
-        int result = switch (action) {
+    private static int calculate(int a, int b, String action) {
+        return switch (action) {
             case "+" -> a + b;
             case "-" -> a - b;
-            default -> a * b;
+            case "*" -> a * b;
+            default -> 0;
         };
 
-        return String.valueOf(result);
     }
 }

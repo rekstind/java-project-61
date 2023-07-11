@@ -4,18 +4,21 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static void runEngine(Scanner scanner, String[][] gameCredentials) {
+    public static final int QUESTIONS_COUNT = 3;
+    public static final int QNA_LENGTH = 2;
 
-        String[] questionAndAnswer;
-        String answer;
+    public static void runEngine(Scanner scanner, String[][] questionsAndAnswers, String description) {
 
-        for (String[] gameCredential : gameCredentials) {
-            questionAndAnswer = gameCredential;
+        String userName = Cli.greetings();
+
+        System.out.println(description);
+
+        for (String[] questionAndAnswer : questionsAndAnswers) {
 
             System.out.println("Question: " + questionAndAnswer[0]);
             System.out.print("Your answer: ");
 
-            answer = scanner.next().trim();
+            String answer = scanner.next().trim();
 
             if (answer.equals(questionAndAnswer[1])) {
                 System.out.println("Correct!");
@@ -23,11 +26,11 @@ public class Engine {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + questionAndAnswer[1]
                         + "'.");
 
-                System.out.println("Let's try again, " + Cli.getUserName() + "!");
+                System.out.println("Let's try again, " + userName + "!");
                 return;
             }
         }
 
-        System.out.println("Congratulations, " + Cli.getUserName() + "!");
+        System.out.println("Congratulations, " + userName + "!");
     }
 }

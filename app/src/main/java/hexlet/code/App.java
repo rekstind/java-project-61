@@ -21,9 +21,8 @@ public class App {
             return;
         }
 
-        Cli.greetings();
-
         switch (s) {
+            case "1" -> Cli.greetings();
             case "2" -> Even.startGame(scanner);
             case "3" -> Calc.startGame(scanner);
             case "4" -> Gcd.startGame(scanner);

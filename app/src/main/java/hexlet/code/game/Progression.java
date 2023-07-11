@@ -10,30 +10,23 @@ public class Progression {
     private static final int MIN_SIZE = 5;
     private static final int MAX_SIZE = 10;
     private static final int MAX_STEP = 20;
-    private static final int QUESTIONS_COUNT = 3;
-    private static final int QNA_LENGTH = 2;
-
+    private static final String DESCRIPTION = "What number is missing in the progression?";
 
     public static void startGame(Scanner scanner) {
-        System.out.println("What number is missing in the progression?");
-
-        Engine.runEngine(scanner, getQnA());
+        Engine.runEngine(scanner, generateQuestionsAndAnswers(), DESCRIPTION);
     }
 
-    public static String[][] getQnA() {
+    public static String[][] generateQuestionsAndAnswers() {
         Random random = new Random();
 
-        String[][] result = new String[QUESTIONS_COUNT][QNA_LENGTH];
+        String[][] result = new String[Engine.QUESTIONS_COUNT][Engine.QNA_LENGTH];
 
-        int hide;
-        int[] progressionNumbers;
-
-        for (int i = 0; i < QUESTIONS_COUNT; i++) {
+        for (int i = 0; i < Engine.QUESTIONS_COUNT; i++) {
             result[i][0] = "";
 
-            progressionNumbers = getProgressionNumbers(random);
+            int[] progressionNumbers = getProgressionNumbers(random);
 
-            hide = random.nextInt(progressionNumbers.length);
+            int hide = random.nextInt(progressionNumbers.length);
 
             result[i][0] = getQuestion(progressionNumbers, hide);
             result[i][1] = getAnswer(progressionNumbers, hide);
