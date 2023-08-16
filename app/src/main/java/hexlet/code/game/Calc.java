@@ -3,7 +3,6 @@ package hexlet.code.game;
 import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Calc {
 
@@ -11,8 +10,8 @@ public class Calc {
     private static final String[] ACTIONS = {"+", "-", "*"};
     private static final String DESCRIPTION = "What is the result of the expression?";
 
-    public static void startGame(Scanner scanner) {
-        Engine.runEngine(scanner, generateQuestionsAndAnswers(), DESCRIPTION);
+    public static void startGame() {
+        Engine.runEngine(generateQuestionsAndAnswers(), DESCRIPTION);
     }
 
     public static String[][] generateQuestionsAndAnswers() {
@@ -32,12 +31,12 @@ public class Calc {
         return result;
     }
 
-    private static int calculate(int a, int b, String action) {
+    private static Integer calculate(int a, int b, String action) {
         return switch (action) {
             case "+" -> a + b;
             case "-" -> a - b;
             case "*" -> a * b;
-            default -> 0;
+            default -> null;
         };
 
     }

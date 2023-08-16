@@ -3,15 +3,14 @@ package hexlet.code.game;
 import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Prime {
 
     private static final int LIMIT = 1000;
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-    public static void startGame(Scanner scanner) {
-        Engine.runEngine(scanner, generateQuestionsAndAnswers(), DESCRIPTION);
+    public static void startGame() {
+        Engine.runEngine(generateQuestionsAndAnswers(), DESCRIPTION);
     }
 
     public static String[][] generateQuestionsAndAnswers() {

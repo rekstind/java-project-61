@@ -23,11 +23,11 @@ public class App {
 
         switch (s) {
             case "1" -> Cli.greetings();
-            case "2" -> Even.startGame(scanner);
-            case "3" -> Calc.startGame(scanner);
-            case "4" -> Gcd.startGame(scanner);
-            case "5" -> Progression.startGame(scanner);
-            case "6" -> Prime.startGame(scanner);
+            case "2" -> Even.startGame();
+            case "3" -> Calc.startGame();
+            case "4" -> Gcd.startGame();
+            case "5" -> Progression.startGame();
+            case "6" -> Prime.startGame();
             default -> System.out.println("Game not selected");
         }
 

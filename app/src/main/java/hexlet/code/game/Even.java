@@ -3,15 +3,14 @@ package hexlet.code.game;
 import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Even {
 
     private static final int LIMIT = 1000;
     private static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-    public static void startGame(Scanner scanner) {
-        Engine.runEngine(scanner, generateQuestionsAndAnswers(), DESCRIPTION);
+    public static void startGame() {
+        Engine.runEngine(generateQuestionsAndAnswers(), DESCRIPTION);
     }
 
     public static String[][] generateQuestionsAndAnswers() {
